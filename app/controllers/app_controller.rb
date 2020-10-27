@@ -1,2 +1,2 @@
-class BnB < Sinatra::Base 
+class BnB < Sinatra::Base
 end

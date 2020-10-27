@@ -3,6 +3,7 @@ require 'spec_helper'
 feature 'Registrations' do
   scenario 'user can sign up and be signed in' do
     visit('registrations/new')
+    puts page.body
     fill_in('username', with: 'ADog')
     fill_in('name', with: 'Arabella Kno')
     fill_in('email', with: 'adog@hotmail.com')
