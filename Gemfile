@@ -4,17 +4,20 @@ source "https://rubygems.org"
 
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
-# gem "rails"
+group :test do
+  gem "capybara"
+  gem "database_cleaner-active_record"
+  gem "rspec"
+  gem "rubocop"
+  gem "simplecov"
+  gem "simplecov-console"
+end
 
-gem "rspec"
-gem "capybara"
-gem "sinatra"
-gem "sinatra-activerecord"
-gem "rake"
-gem "pg"
-gem "database_cleaner-active_record"
-gem "bcrypt"
-gem "rubocop"
-gem "shotgun"
-gem "simplecov"
-gem "simplecov-console"
+group :development do
+  gem "bcrypt"
+  gem "pg"
+  gem "rake"
+  gem "sinatra"
+  gem "sinatra-activerecord"
+  gem "shotgun"
+end

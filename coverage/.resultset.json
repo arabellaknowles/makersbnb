@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/username/Desktop/Makers/makersbnb/spec/features/user_can_sign_up_and_sign_in_spec.rb": {
+      "/Users/kiril/Projects/makersbnb/spec/features/user_can_sign_up_and_sign_in_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           1,
-          1,
+          null,
           1,
           0,
           0,
@@ -21,6 +21,6 @@
         ]
       }
     },
-    "timestamp": 1603795309
+    "timestamp": 1603796078
   }
 }
