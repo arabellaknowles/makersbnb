@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_162619) do
     t.string "price_per_night"
     t.date "start_date"
     t.date "end_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -31,8 +29,6 @@ ActiveRecord::Schema.define(version: 2020_10_27_162619) do
     t.string "username"
     t.string "email"
     t.string "password_hash"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
