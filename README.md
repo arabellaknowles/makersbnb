@@ -1,5 +1,9 @@
-# makersbnb
+# MakersBnB
 
+
+## User stories  
+
+```
 As a host  
 So I can attract guests to my property  
 I want to list my space on MakersBnB  
@@ -35,3 +39,49 @@ I would like only available dates to appear to potential guests
 As a host  
 So that I can be protected from unreliable guests  
 I would like spaces to be available to hire until the booking request has been accepted  
+```
+
+## Domain Model
+
+![Domain Model](https://imgur.com/Z9YtFFu.png)
+
+
+## How to use
+
+### Getting started:
+
+Clone this repository and then run:
+
+``` 
+bundle
+```
+
+### To set up a data base
+
+To set up the MakersBnb database follow the below steps:
+```
+rake db:create
+```
+```
+rake db:migrate
+```
+### To run MakersBnB:
+
+```
+shotgun
+```
+
+To view MakersBnB navigate to http://localhost:9393
+
+
+### To  run tests:
+
+```
+rspec
+```
+
+### To run linting:
+
+```
+rubocop
+```
