@@ -12,5 +12,10 @@ class BnB < Sinatra::Base
         redirect('/sign_in')
       end
     end
+
+    delete '/sessions' do
+      session.delete(:user_id)
+      redirect('/')
+    end
   end
   

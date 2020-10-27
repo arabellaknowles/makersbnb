@@ -31,4 +31,14 @@ feature 'Registrations' do
     click_button('Submit')
     expect(page.current_path).to eq('/sign_in')
   end
+
+  scenario 'user can sign out' do
+    visit('/sign_in')
+    fill_in('username', with: 'test101')
+    fill_in('password', with: 'test12')
+    click_button('Submit')
+    click_button('Sign Out')
+    puts page.body
+    expect(page).not_to have_content('Hi, Test Person')
+  end
 end
