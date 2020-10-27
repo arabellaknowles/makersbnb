@@ -8,4 +8,10 @@
 <% else %>
   Hi
 <% end %>
-
+<ul>
+  <% @spaces.each do |space| %>
+  <li>
+    <%= space %>
+  </li>
+  <% end %>
+</ul>
