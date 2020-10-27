@@ -7,7 +7,6 @@ class CreateSpaces < ActiveRecord::Migration[6.0]
       t.string :price_per_night
       t.date :start_date
       t.date :end_date     
-      t.timestamps null: false
     end
   end
 end
