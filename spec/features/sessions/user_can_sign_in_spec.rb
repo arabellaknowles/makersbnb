@@ -49,4 +49,16 @@ feature 'Registrations' do
     expect(page).to have_button('Sign Up')
   end
 
+  scenario 'users can see prompt to register on signin page' do
+    visit('/sign_in')
+    expect(page).to have_link('Sign Up')
+    click_link('Sign Up')
+    fill_in('username', with: 'useruser')
+    fill_in('name', with: 'User User')
+    fill_in('email', with: '123@hotmail.com')
+    fill_in('password', with: 'iloveusers')
+    click_button('Submit')
+    expect(page).to have_content('Hi, User User')
+  end
+
 end
