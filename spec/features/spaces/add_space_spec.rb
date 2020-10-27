@@ -1,4 +1,4 @@
-require_relative '../support/web_helpers.rb'
+require_relative '../../support/web_helpers.rb'
 require 'spec_helper'
 require 'pg'
 
