@@ -14,6 +14,7 @@ feature 'Registrations' do
     click_button('Submit')
     expect(page.current_path).to eq('/')
     expect(page).to have_content('Hi, Test Person')
+    expect(page).to have_button('Sign Out')
   end
 
   scenario 'user can not sign up and is redirected' do
@@ -38,7 +39,14 @@ feature 'Registrations' do
     fill_in('password', with: 'test12')
     click_button('Submit')
     click_button('Sign Out')
-    puts page.body
     expect(page).not_to have_content('Hi, Test Person')
   end
+
+  scenario 'user can log in and sign up on home page' do
+    visit('/')
+    expect(page.current_path).to eq('/')
+    expect(page).to have_button('Sign In')
+    expect(page).to have_button('Sign Up')
+  end
+
 end
