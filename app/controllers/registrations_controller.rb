@@ -4,10 +4,14 @@ class BnB < Sinatra::Base
   end
 
   post '/registrations' do
-    user = User.new(name: params[:name], username: params[:username],email:  params[:email])
+    user = User.new(name: params[:name], username: params[:username], email: params[:email])
     user.password = params[:password]
-    user.save!
-    p user
-    redirect('/')
+    if user.save!
+      session[:user_id] = user.id
+      p session[:user_id]
+     redirect('/')
+    else
+
+    end
   end
 end

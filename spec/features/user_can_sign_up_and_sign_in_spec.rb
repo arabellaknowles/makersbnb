@@ -10,6 +10,6 @@ feature 'Registrations' do
     fill_in('password', with: 'ilovedogs')
     click_button('Submit')
     expect(page.current_path).to eq('/')
-    expect(page).to have_content('Hi, Arabella')
+    expect(page).to have_content('Hi, Arabella Kno')
   end
 end
