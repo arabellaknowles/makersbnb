@@ -14,3 +14,15 @@
     <input type="submit" value="Sign In">
   </form>
 <% end %>
+
+<ul>
+  <% @spaces.each do |space| %>
+  <li>
+    <%= space.name %>
+    <%= space.description %>
+    <%= space.price_per_night %>
+    <%= space.start_date %>
+    <%= space.end_date %>
+  </li>
+  <% end %>
+</ul>
