@@ -9,6 +9,7 @@ class BnB < Sinatra::Base
         session[:user_id] = user.id
         redirect('/')
       else
+        flash[:notice] = "Username or password incorrect, please try again."
         redirect('/sign_in')
       end
     end
