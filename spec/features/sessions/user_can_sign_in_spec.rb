@@ -38,7 +38,16 @@ feature 'Registrations' do
     fill_in('password', with: 'test12')
     click_button('Submit')
     click_button('Sign Out')
-    puts page.body
     expect(page).not_to have_content('Hi, Test Person')
+  end
+  
+  scenario 'user gets shown message if username/pwd incorrect' do
+    visit('/sign_in')
+    fill_in('username', with: 'test111101')
+    fill_in('password', with: 'test1212312')
+    click_button('Submit')
+    expect(page.current_path).to eq('/sign_in')
+    expect(page).not_to have_content('Hi, Test Person')
+    expect(page).to have_content('Username or password incorrect, please try again.')
   end
 end

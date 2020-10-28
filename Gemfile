@@ -19,5 +19,6 @@ group :development do
   gem "rake"
   gem "sinatra"
   gem "sinatra-activerecord"
+  gem "sinatra-flash"
   gem "shotgun"
 end
