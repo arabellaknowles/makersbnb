@@ -4,6 +4,10 @@
 <%= @space.start_date %>
 <%= @space.end_date %>
 <p>Contact <%= @user.name %> at: <%= @user.email %></p>
-<form action="/spaces/<%= @space.id %>/requests/new" method="GET">
+
+<form action="/requests/new" method="GET">
   <input type='submit' value='Make Request'>
+  <input type='hidden' name='space_id' value='<%= @space.id %>'>
 </form>
+
+<%= flash[:notice] %>

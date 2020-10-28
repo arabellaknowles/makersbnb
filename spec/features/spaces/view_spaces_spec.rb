@@ -1,5 +1,3 @@
-require_relative '../../support/web_helpers.rb'
-require 'spec_helper'
 require 'pg'
 
 feature 'Space listings' do
