@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 feature 'Registrations' do
   before do
     user = User.new(username: 'test101', name: 'Test Person', email: 'test@test.com')
