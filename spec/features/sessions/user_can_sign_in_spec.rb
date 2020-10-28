@@ -14,6 +14,7 @@ feature 'Registrations' do
     click_button('Submit')
     expect(page.current_path).to eq('/')
     expect(page).to have_content('Hi, Test Person')
+    expect(page).to have_button('Sign Out')
   end
 
   scenario 'user can not sign up and is redirected' do
@@ -38,7 +39,35 @@ feature 'Registrations' do
     fill_in('password', with: 'test12')
     click_button('Submit')
     click_button('Sign Out')
-    puts page.body
     expect(page).not_to have_content('Hi, Test Person')
+  end
+
+  scenario 'user can log in and sign up on home page' do
+    visit('/')
+    expect(page.current_path).to eq('/')
+    expect(page).to have_button('Sign In')
+    expect(page).to have_button('Sign Up')
+  end
+
+  scenario 'users can see prompt to register on signin page' do
+    visit('/sign_in')
+    expect(page).to have_link('Sign Up')
+    click_link('Sign Up')
+    fill_in('username', with: 'useruser')
+    fill_in('name', with: 'User User')
+    fill_in('email', with: '123@hotmail.com')
+    fill_in('password', with: 'iloveusers')
+    click_button('Submit')
+    expect(page).to have_content('Hi, User User')
+  end
+
+   scenario 'user gets shown message if username/pwd incorrect' do
+    visit('/sign_in')
+    fill_in('username', with: 'test111101')
+    fill_in('password', with: 'test1212312')
+    click_button('Submit')
+    expect(page.current_path).to eq('/sign_in')
+    expect(page).not_to have_content('Hi, Test Person')
+    expect(page).to have_content('Username or password incorrect, please try again.')
   end
 end
