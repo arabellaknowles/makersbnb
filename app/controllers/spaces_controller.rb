@@ -17,4 +17,9 @@ class BnB < Sinatra::Base
     #Add flash notice to confirm
     redirect '/'
   end
+
+  
+
 end
+
+#spaces/:id/requests/new
