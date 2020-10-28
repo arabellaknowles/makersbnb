@@ -5,6 +5,10 @@
     <input type="submit" value="Sign Out">
   </form>
 
+  <form action="/spaces/new" method="GET">
+    <input type="submit" value="Add Space">
+  </form>
+
 <% else %>
   <form action="/registrations/new">
     <input type="submit" value="Sign Up">
@@ -21,12 +25,9 @@
     <%= space.name %>
     <%= space.description %>
     <%= space.price_per_night %>
-    <%= space.start_date %>
-    <%= space.end_date %>
+      <form action="/spaces/<%= space.id %>/moreinfo" method="GET">
+        <input type='submit' value='More Info'>
+      </form>
   </li>
   <% end %>
 </ul>
-
-<form action="/spaces/new" method="GET">
-  <input type="submit" value="Add Space">
-</form>
