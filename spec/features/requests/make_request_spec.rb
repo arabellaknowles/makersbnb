@@ -12,6 +12,7 @@ feature "requests" do
     end
 
     click_button('Make Request')
+    puts page.body
     expect(current_path).to eq "/spaces/#{first_space.id}/moreinfo"
     expect(page).to have_content('Please log in to make a request')
   end
