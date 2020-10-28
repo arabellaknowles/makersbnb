@@ -12,3 +12,4 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 Capybara.app = BnB
+
