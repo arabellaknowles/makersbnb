@@ -70,4 +70,14 @@ feature 'Registrations' do
     expect(page).not_to have_content('Hi, Test Person')
     expect(page).to have_content('Username or password incorrect, please try again.')
   end
+
+  scenario 'user gets a message when they sign out' do
+      visit('/sign_in')
+      fill_in('username', with: 'test101')
+      fill_in('password', with: 'test12')
+      click_button('Submit')
+      click_button('Sign Out')
+      expect(page).to have_content('You are signed out')
+    end
+
 end

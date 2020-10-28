@@ -1,5 +1,10 @@
+<head>
+    <title> </title>
+      <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+  </head>
+
 <% if current_user %>
-  <p><b>Hi, <%= current_user.name %></b></p>
+  <p><b>Hi, <%= current_user.name %> </b></p>
   <form action="/sessions" method="POST">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Sign Out">
@@ -19,6 +24,9 @@
   </form>
 <% end %>
 
+
+<%= flash[:notice] %>
+
 <ul>
   <% @spaces.each do |space| %>
   <li>
@@ -31,3 +39,4 @@
   </li>
   <% end %>
 </ul>
+
