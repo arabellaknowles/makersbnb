@@ -17,4 +17,15 @@ class BnB < Sinatra::Base
     #Add flash notice to confirm
     redirect '/'
   end
+
+  get '/spaces/:id/moreinfo' do
+    @space = Space.find_by(id: params[:id])
+    @user = User.find_by(id: @space.host_id)
+    erb(:'/spaces/moreinfo')
+  end
+
+
+
 end
+
+#spaces/:id/requests/new
