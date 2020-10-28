@@ -2,7 +2,7 @@ class BnB < Sinatra::Base
     get '/sign_in' do
       erb(:'sessions/new')
     end
-  
+
     post '/sessions' do
       user = User.authenticate(username: params[:username], password: params[:password])
       if user
@@ -15,8 +15,8 @@ class BnB < Sinatra::Base
     end
 
     delete '/sessions' do
+      flash[:notice] = "You are signed out"
       session.delete(:user_id)
       redirect('/')
     end
   end
-  

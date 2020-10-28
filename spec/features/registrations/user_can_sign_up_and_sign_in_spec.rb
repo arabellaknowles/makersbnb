@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 feature 'Registrations' do
   scenario 'user can sign up and be signed in' do
     visit('registrations/new')
