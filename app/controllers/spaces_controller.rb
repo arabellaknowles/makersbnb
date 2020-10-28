@@ -18,6 +18,10 @@ class BnB < Sinatra::Base
     redirect '/'
   end
 
+  get '/spaces/:id' do
+    @space = Space.find_by(id: params[:id])
+  end
+
   
 
 end
