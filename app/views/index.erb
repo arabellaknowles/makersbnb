@@ -1,3 +1,8 @@
+<head>
+    <title> </title>
+      <link type="text/css" rel="stylesheet" href="<%=url('/style.css')%>" />
+  </head>
+
 <% if current_user %>
   <p><b>Hi, <%= current_user.name %> </b></p>
   <form action="/sessions" method="POST">
