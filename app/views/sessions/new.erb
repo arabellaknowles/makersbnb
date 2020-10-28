@@ -1,16 +1,20 @@
 <head>
-  <title> </title>
+  <title> Sign In </title>
   <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
 </head>
 
-<form action='/sessions' method='post'>
-  <label for='username' > Username: </label>
-  <input type='text' name='username' required><br>
-  <label for='password' > Password: </label>
-  <input type='password' name='password' required><br>
-  <input type='submit' value='Submit'>
-</form>
+<body>
 
-<p>Not registered? <a href="registrations/new">Sign Up</a> instead</p>
+  <form action='/sessions' method='post'>
+    <label for='username' > Username: </label>
+    <input type='text' name='username' required><br>
+    <label for='password' > Password: </label>
+    <input type='password' name='password' required><br>
+    <input type='submit' value='Submit'>
+  </form>
 
-<%= flash[:notice] %>
+  <p>Not registered? <a href="registrations/new">Sign Up</a> instead</p>
+
+  <%= flash[:notice] %>
+
+</body>
