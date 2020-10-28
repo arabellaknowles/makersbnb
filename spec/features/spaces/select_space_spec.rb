@@ -6,7 +6,7 @@ feature 'Viewing details of spaces listed on the homepage' do
     add_space
     click_on('Sign Out')
     sign_up_guest
-    click_button('more info')
-    expect(page).to have_button('Make Request')
+    click_button('More Info')
+    expect(page).to have_content('Make Request')
   end
 end
