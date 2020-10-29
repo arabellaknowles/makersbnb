@@ -11,6 +11,10 @@
       <input class="sign_out_button" type="submit" value="Sign Out">
     </form>
 
+    <form action="/sessions/<%= current_user.id %>" method="GET">
+      <input class="my_account_button" type="submit" value="My Account">
+    </form>
+
     <form action="/spaces/new" method="GET">
       <input class="add_space_button" type="submit" value="Add Space">
     </form>

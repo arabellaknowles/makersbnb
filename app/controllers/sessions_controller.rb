@@ -19,4 +19,9 @@ class BnB < Sinatra::Base
       session.delete(:user_id)
       redirect('/')
     end
+
+    get '/sessions/:id' do
+      @sent = Request.where(guest_id: current_user.id)
+      erb(:'/sessions/account')
+    end
   end
