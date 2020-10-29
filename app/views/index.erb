@@ -4,7 +4,8 @@
 </head>
 
 <body>
-   <% if current_user %>
+  <div class='container'>
+  <% if current_user %>
     <p><b>Hi, <%= current_user.name %> </b></p>
     <form action="/sessions" method="POST">
       <input type="hidden" name="_method" value="DELETE">
@@ -26,7 +27,8 @@
   <% end %>
 
 
-
+  <%= flash[:notice] %>
+  </div>
 
   <ul>
     <% @spaces.each do |space| %>
