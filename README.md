@@ -68,10 +68,10 @@ rake db:migrate
 ### To run MakersBnB:
 
 ```
-shotgun
+rackup
 ```
 
-To view MakersBnB navigate to http://localhost:9393
+To view MakersBnB navigate to http://localhost:9292
 
 
 ### To  run tests:
