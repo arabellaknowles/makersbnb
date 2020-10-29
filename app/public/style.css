@@ -6,29 +6,3 @@ body {
     background: -moz-linear-gradient(top, #b3e6ff 0%, #fff 100%);
   }
 
-.sign_out_button { 
-  background-color: white;
-  border-color: white;
-  border-radius: 6px;
-  color: white);
-  padding: 4px 18px;
-  font-size: 12px;
-}
-
-.add_space_button { 
-  background-color: white;
-  border-color: white;
-  border-radius: 6px;
-  color: #ffffe6);
-  padding: 4px 12px;
-  font-size: 12px;
-}
-
-.more_info_button { 
-  background-color: white;
-  border-color: white;
-  border-radius: 6px;
-  color: #067bf0);
-  padding: 4px 12px;
-  font-size: 12px;
-}
