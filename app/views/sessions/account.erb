@@ -1,8 +1,21 @@
 <body>
   <div id="sent">
-    <% @spaces.each do |space| %>
-      <%= space.name %>
-      <br>
+  <h1> Sent: </h1>
+    <% if @requested_spaces %>
+      <% @requested_spaces.each do |space| %>
+        <%= space.name %>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="received">
+  <h1> Received: </h1>
+    <% if @my_spaces %>
+      <% @my_spaces.each do |space| %>
+        <%= space.name %>
+        <br>
+      <% end %>
     <% end %>
   </div>
 
