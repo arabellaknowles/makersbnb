@@ -1,8 +1,33 @@
-body {
-    padding: 100px 0;
-    background: #b3e6ff;
-    background: -webkit-linear-gradient(top, #b3e6ff 0%, #fff 100%);
-    background: -linear-gradient(top, #b3e6ff 0%, #fff 100%);
-    background: -moz-linear-gradient(top, #b3e6ff 0%, #fff 100%);
-  }
+html,body {
+  height:100%; 
+  width:100%; 
+  margin:200;
+}
 
+body {
+  
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.welcome {
+
+}
+
+form {
+  margin: 200;
+  width: 50%;
+}
+
+.sign_in_form {
+
+}
+
+footer {
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  position: absolute;
+  bottom: 0;
+}
