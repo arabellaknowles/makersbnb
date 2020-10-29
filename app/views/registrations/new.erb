@@ -1,22 +1,18 @@
-<head>
-  <title> Sign Up </title>
-  <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
-</head>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+  </head>
 
-<body>
-
-  <p>Please complete the following form to register for MakersBnB</p>
-
-  <form action='/registrations' method='post'>
-    <label for='name' > Name: </label>
-    <input type='text' name='name' required>
-    <label for='username' > Username: </label>
-    <input type='text' name='username' required>
-    <label for='email' > Email: </label>
-    <input type='email' name='email' required>
-    <label for='password' > Password: </label>
-    <input type='password' name='password' required>
-    <input type='submit' value='Submit'>
-  </form>
-
-</body>
+    <body>
+      <div class='container'>
+        <h1>Register for Null BnB</h1>
+      <form action='/registrations' method='post'>
+        <input type='text' class='input_field' name='name' placeholder='Name' required>
+        <input type='text' class='input_field' name='username' placeholder='Username' required>
+        <input type='email' class='input_field' name='email' placeholder='Email' required>
+        <input type='password' class='input_field' name='password' placeholder='Password' required>
+        <input type='submit' class='button' value='Submit'>
+      </form>
+      </div>
+</html>
