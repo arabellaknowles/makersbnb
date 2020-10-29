@@ -1,10 +1,9 @@
 <head>
-  <title> MakersBnb </title>
+  <title> MakersBnB </title>
   <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
 </head>
 
 <body>
-
   <% if current_user %>
     <p><b>Hi, <%= current_user.name %> </b></p>
     <form action="/sessions" method="POST">
@@ -41,5 +40,4 @@
     </li>
     <% end %>
   </ul>
-
 </body>

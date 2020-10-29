@@ -23,9 +23,6 @@ class BnB < Sinatra::Base
     @user = User.find_by(id: @space.host_id)
     erb(:'/spaces/moreinfo')
   end
-
-
-
 end
 
 #spaces/:id/requests/new

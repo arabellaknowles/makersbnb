@@ -1,5 +1,3 @@
-require_relative '../../support/web_helpers.rb'
-
 feature 'Viewing more detailed information about selected space' do
 
   before do
