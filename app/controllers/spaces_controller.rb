@@ -21,6 +21,7 @@ class BnB < Sinatra::Base
   get '/spaces/:id/moreinfo' do
     @space = Space.find_by(id: params[:id])
     @host = User.find_by(id: @space.host_id)
+    @guest = current_user
     erb(:'/spaces/moreinfo')
   end
 end

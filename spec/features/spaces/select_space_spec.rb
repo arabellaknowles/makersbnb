@@ -9,9 +9,7 @@ feature 'Viewing more detailed information about selected space' do
   end
 
   scenario 'User clicks listed space on homepage and redirected to info page' do
-
-    expect(page).to have_button('Make Request')
-
+    expect(page).to have_button('Make Request') 
   end
 
   scenario "User can see host's contact details" do
