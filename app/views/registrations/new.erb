@@ -1,13 +1,22 @@
-<p>Please complete the following form to register for MakersBnB</p>
+<head>
+  <title> Sign Up </title>
+  <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+</head>
 
-<form action='/registrations' method='post'>
-  <label for='name' > Name: </label>
-  <input type='text' name='name' required>
-  <label for='username' > Username: </label>
-  <input type='text' name='username' required>
-  <label for='email' > Email: </label>
-  <input type='email' name='email' required>
-  <label for='password' > Password: </label>
-  <input type='password' name='password' required>
-  <input type='submit' value='Submit'>
-</form>
+<body>
+
+  <p>Please complete the following form to register for MakersBnB</p>
+
+  <form action='/registrations' method='post'>
+    <label for='name' > Name: </label>
+    <input type='text' name='name' required>
+    <label for='username' > Username: </label>
+    <input type='text' name='username' required>
+    <label for='email' > Email: </label>
+    <input type='email' name='email' required>
+    <label for='password' > Password: </label>
+    <input type='password' name='password' required>
+    <input type='submit' value='Submit'>
+  </form>
+
+</body>

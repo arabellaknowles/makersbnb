@@ -1,5 +1,5 @@
 <head>
-  <title>MakersBnB</title>
+  <title> MakersBnB </title>
   <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
 </head>
 
@@ -8,20 +8,20 @@
     <p><b>Hi, <%= current_user.name %> </b></p>
     <form action="/sessions" method="POST">
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Sign Out">
+      <input class="sign_out_button" type="submit" value="Sign Out">
     </form>
 
     <form action="/spaces/new" method="GET">
-      <input type="submit" value="Add Space">
+      <input class="add_space_button" type="submit" value="Add Space">
     </form>
 
   <% else %>
     <form action="/registrations/new">
-      <input type="submit" value="Sign Up">
+      <input class="sign_up_button" type="submit" value="Sign Up">
     </form>
 
     <form action="/sign_in">
-      <input type="submit" value="Sign In">
+      <input class="sign_in_button" type="submit" value="Sign In">
     </form>
   <% end %>
 
@@ -30,16 +30,14 @@
 
   <ul>
     <% @spaces.each do |space| %>
-    <div class="space" id="<%= space.id %>">
-      <li>
-        <%= space.name %>
-        <%= space.description %>
-        <%= space.price_per_night %>
-          <form action="/spaces/<%= space.id %>/moreinfo" method="GET">
-            <input type='submit' value='More Info'>
-          </form>
-      </li>
-      <% end %>
-    </div>
+    <li>
+      <%= space.name %>
+      <%= space.description %>
+      <%= space.price_per_night %>
+        <form action="/spaces/<%= space.id %>/moreinfo" method="GET">
+          <input class="more_info_button" type='submit' value='More Info'>
+        </form>
+    </li>
+    <% end %>
   </ul>
 </body>
