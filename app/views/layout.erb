@@ -9,23 +9,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
     
     <div class="banner"> 
-      <img alt="nullspaces" src="../images/null_spaces.png" width="400px" style="display: block;" space="20" />   
+      <img alt="nullspaces" src="https://github.com/kiriarf/makersbnb/blob/styling/app/images/null_spaces.png?raw=true" width="400px" style="display: block;" space="20" />   
+     
+
+    <div class="banner_button" >
       <form action="/sessions" method="POST">
         <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" class="banner_button" value="Sign Out">
+        <input type="submit" class="banner_butt" value="Sign Out">
       </form>
 
       <form action="/spaces/new" method="GET">
-        <input type="submit" class="banner_button" value="Add Space">
+        <input type="submit" class="banner_butt" value="Add Space">
       </form>
 
       <form action="/registrations/new">
-        <input type="submit" class="banner_button" value="Sign Up">
+        <input type="submit" class="banner_butt" value="Sign Up">
       </form>
 
       <form action="/sign_in">
-        <input type="submit" class="banner_button" value="Sign In">
+        <input type="submit" class="banner_butt"  value="Sign In">
       </form>
+
+      <form action="/account">
+      <input type="submit" class="banner_butt" value="Account">
+      </form>
+    </div>
+
+    </div>
+    <div class="spacer">
     </div>
 
 
