@@ -1,9 +1,12 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'simplecov'
 require 'simplecov-console'
 require 'capybara/rspec'
 require './app/app'
 require_relative 'support/database_cleaner'
-ENV['RACK_ENV'] = 'test'
+require_relative 'support/web_helpers'
+
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -13,3 +16,4 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 Capybara.app = BnB
+
