@@ -1,23 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
-  </head>
-  <body>
+<head>
+  <title> <%= @space.name %> </title>
+  <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+</head>
 
-    <%= @space.name %>
-    <%= @space.description %>
-    <%= @space.price_per_night %>
-    <%= @space.start_date %>
-    <%= @space.end_date %>
-    <p>Contact <%= @user.name %> at: <%= @user.email %></p>
+<body>
+  <%= @space.name %>
+  <%= @space.description %>
+  <%= @space.price_per_night %>
+  <%= @space.start_date %>
+  <%= @space.end_date %>
+  <p>Contact <%= @host.name %> at: <%= @host.email %></p>
 
-    <form action="/requests/new" method="GET">
-      <input type='submit' value='Make Request'>
+  <% if current_user %>
+    <form action='/requests' method='POST'>
+      <input type='hidden' name='host_id' value='<%= @host.id %>'>
+      <input type='hidden' name='guest_id' value='<%= @guest.id %>'>
       <input type='hidden' name='space_id' value='<%= @space.id %>'>
+      <label for='start_date' > Start Date: </label>
+      <input type='date' name='start_date' required><br>
+      <label for='end_date' > End Date: </label>
+      <input type='date' name='end_date' required><br>
+      <input type='submit' value='Make Request'>
     </form>
+  <% else %>
+    <p>Please sign in to make a request for this space</p>
+  <% end %>
 
-    <%= flash[:notice] %>
+  <%= flash[:notice] %>
 
-  </body>
-</html>
+</body>
+
