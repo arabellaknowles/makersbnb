@@ -1,23 +1,22 @@
 <body>
   <div id="sent">
-  <h1> Sent: </h1>
-    <% if @requested_spaces %>
-      <% @requested_spaces.each do |space| %>
-        <%= space.name %>
-        <br>
+    <h1> Sent Requests: </h1>
+    <% if @arr1 %>
+      <% @arr1.each do |hsh| %>
+        <% hsh.each do |space, request| %>
+          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+        <% end %>
       <% end %>
     <% end %>
   </div>
-
   <div id="received">
-  <h1> Received: </h1>
-    <% if @my_spaces %>
-      <% @my_spaces.each do |space| %>
-        <%= space.name %>
-        <br>
+    <h1> Received Requests: </h1>
+    <% if @arr2 %>
+      <% @arr2.each do |hsh| %>
+        <% hsh.each do |space, request| %>
+          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+        <% end %>
       <% end %>
     <% end %>
   </div>
-
-  
 </body>

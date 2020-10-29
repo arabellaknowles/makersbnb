@@ -21,26 +21,18 @@ class BnB < Sinatra::Base
     end
 
     get '/sessions/:id' do
+      @arr1 = []
       @sent_requests = Request.where(guest_id: current_user.id).all
-
-      @requested_spaces = []
-
       @sent_requests.each do |request|
-        @requested_spaces << Space.find_by(id: request.space_id)
+        @arr1 << {Space.find_by(id: request.space_id) => request}
       end
 
-      # currently outputs first host space rather than specific requested space
-      
+      @arr2 = []
       @received_requests = Request.where(host_id: current_user.id).all
-
-      @my_spaces = []
-
       @received_requests.each do |request|
-        @my_spaces << Space.find_by(id: request.space_id)
+        @arr2 << {Space.find_by(id: request.space_id) => request}
       end
       
       erb(:'/sessions/account')
     end
-
-
   end
