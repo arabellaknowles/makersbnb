@@ -6,8 +6,29 @@
     <title> Null BnB </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="<%=url('/style.css')%>" >
-
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+    
+    <div class="banner"> 
+      <img alt="nullspaces" src="../images/null_spaces.png" width="400px" style="display: block;" space="20" />   
+      <form action="/sessions" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="banner_button" value="Sign Out">
+      </form>
+
+      <form action="/spaces/new" method="GET">
+        <input type="submit" class="banner_button" value="Add Space">
+      </form>
+
+      <form action="/registrations/new">
+        <input type="submit" class="banner_button" value="Sign Up">
+      </form>
+
+      <form action="/sign_in">
+        <input type="submit" class="banner_button" value="Sign In">
+      </form>
+    </div>
+
+
   </head>
   <body>
 

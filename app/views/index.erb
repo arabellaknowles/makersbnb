@@ -6,24 +6,11 @@
 <body>
   <div class='container'>
   <% if current_user %>
-    <p><b>Hi, <%= current_user.name %> </b></p>
-    <form action="/sessions" method="POST">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" class="button" value="Sign Out">
-    </form>
-
-    <form action="/spaces/new" method="GET">
-      <input type="submit" class="button" value="Add Space">
-    </form>
+ 
+    <h1><b>Hi, <%= current_user.name %> </b></<h1>
 
   <% else %>
-    <form action="/registrations/new">
-      <input type="submit" class="button" value="Sign Up">
-    </form>
 
-    <form action="/sign_in">
-      <input type="submit" class="button" value="Sign In">
-    </form>
   <% end %>
 
 
@@ -33,12 +20,12 @@
   <ul>
     <% @spaces.each do |space| %>
       <div id='<%= space.id %>'>
-        <li>
-          <%= space.name %>
-          <%= space.description %>
+        <li style='list-style: none;'>
+          <%= space.name %><br>
+          <%= space.description %><br>
           <%= space.price_per_night %>
             <form action="/spaces/<%= space.id %>/moreinfo" method="GET">
-              <input class="more_info_button" type='submit' value='More Info'>
+              <input class="button" type='submit' value='More Info'>
             </form>
         </li>
         <% end %>
