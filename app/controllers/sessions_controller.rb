@@ -21,7 +21,14 @@ class BnB < Sinatra::Base
     end
 
     get '/sessions/:id' do
-      @sent = Request.where(guest_id: current_user.id)
+      @all_requests = Request.where(guest_id: current_user.id).all
+
+      @spaces = []
+
+      @all_requests.each do |request|
+        @spaces << Space.find_by(host_id: request.host_id)
+      end
+
       erb(:'/sessions/account')
     end
   end

@@ -9,14 +9,14 @@ feature 'user has dashboard' do
     within("div#sent") do
       expect(page).to have_content("12 Ham Street")
     end
-    click_button('Sign Out')
+    # click_button('Sign Out')
 
-    sign_up_host
-    visit('/')
-    click_button('My Account')
-    within("div#received") do
-      expect(page).to have_content("12 Ham Street")
-    end
+    # sign_up_host
+    # visit('/')
+    # click_button('My Account')
+    # within("div#received") do
+    #   expect(page).to have_content("12 Ham Street")
+    # end
 
     # hi user, name, email, - allow change email
     # two boxes sent / received

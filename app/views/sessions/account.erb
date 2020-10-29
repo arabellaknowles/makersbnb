@@ -1,4 +1,10 @@
-<% @sent.each do |sent| %>
-  <%= sent.space_id %>
-<% end %>
+<body>
+  <div id="sent">
+    <% @spaces.each do |space| %>
+      <%= space.name %>
+      <br>
+    <% end %>
+  </div>
 
+  
+</body>
