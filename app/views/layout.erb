@@ -30,8 +30,8 @@
         <input type="submit" class="banner_butt"  value="Sign In">
       </form>
 
-      <form action="/account">
-      <input type="submit" class="banner_butt" value="Account">
+      <form action="/sessions/<%= current_user.id %>" method="GET">
+      <input class="banner_butt" type="submit" value="My Account">
       </form>
     </div>
 
