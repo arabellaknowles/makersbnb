@@ -6,6 +6,7 @@
 
     <body>
       <div class='container'>
+        <%= flash[:notice] %>
         <h1>Sign in below</h1>
         <form action='/sessions' method='post'>
           <input type='text' class='input_field' name='username' placeholder='Username' required><br>
@@ -14,8 +15,6 @@
         </form>
 
         <p>Not registered? <a href="registrations/new">Sign Up</a> instead</p>
-
-      <%= flash[:notice] %>
       </div>
     </body>
 </html>
