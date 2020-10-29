@@ -4,29 +4,31 @@
 </head>
 
 <body>
+  <div class='container'>
   <% if current_user %>
     <p><b>Hi, <%= current_user.name %> </b></p>
     <form action="/sessions" method="POST">
       <input type="hidden" name="_method" value="DELETE">
-      <input class="sign_out_button" type="submit" value="Sign Out">
+      <input type="submit" class="button" value="Sign Out">
     </form>
 
     <form action="/spaces/new" method="GET">
-      <input class="add_space_button" type="submit" value="Add Space">
+      <input type="submit" class="button" value="Add Space">
     </form>
 
   <% else %>
     <form action="/registrations/new">
-      <input class="sign_up_button" type="submit" value="Sign Up">
+      <input type="submit" class="button" value="Sign Up">
     </form>
 
     <form action="/sign_in">
-      <input class="sign_in_button" type="submit" value="Sign In">
+      <input type="submit" class="button" value="Sign In">
     </form>
   <% end %>
 
 
   <%= flash[:notice] %>
+  </div>
 
   <ul>
     <% @spaces.each do |space| %>
