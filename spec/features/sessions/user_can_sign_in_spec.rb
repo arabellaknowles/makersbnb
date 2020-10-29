@@ -1,4 +1,4 @@
-feature 'Registrations' do
+feature 'Sessions' do
   before do
     user = User.new(username: 'test101', name: 'Test Person', email: 'test@test.com')
     user.password = 'test12'
@@ -40,16 +40,8 @@ feature 'Registrations' do
     expect(page).not_to have_content('Hi, Test Person')
   end
 
-  scenario 'user can log in and sign up on home page' do
-    visit('/')
-    expect(page.current_path).to eq('/')
-    expect(page).to have_button('Sign In')
-    expect(page).to have_button('Sign Up')
-  end
-
   scenario 'users can see prompt to register on signin page' do
     visit('/sign_in')
-    expect(page).to have_link('Sign Up')
     click_link('Sign Up')
     fill_in('username', with: 'useruser')
     fill_in('name', with: 'User User')
@@ -59,7 +51,7 @@ feature 'Registrations' do
     expect(page).to have_content('Hi, User User')
   end
 
-   scenario 'user gets shown message if username/pwd incorrect' do
+  scenario 'user gets shown message if username/pwd incorrect' do
     visit('/sign_in')
     fill_in('username', with: 'test111101')
     fill_in('password', with: 'test1212312')
@@ -70,12 +62,11 @@ feature 'Registrations' do
   end
 
   scenario 'user gets a message when they sign out' do
-      visit('/sign_in')
-      fill_in('username', with: 'test101')
-      fill_in('password', with: 'test12')
-      click_button('Submit')
-      click_button('Sign Out')
-      expect(page).to have_content('You are signed out')
-    end
-
+    visit('/sign_in')
+    fill_in('username', with: 'test101')
+    fill_in('password', with: 'test12')
+    click_button('Submit')
+    click_button('Sign Out')
+    expect(page).to have_content('You are signed out')
+  end
 end

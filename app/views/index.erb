@@ -30,14 +30,16 @@
 
   <ul>
     <% @spaces.each do |space| %>
-    <li>
-      <%= space.name %>
-      <%= space.description %>
-      <%= space.price_per_night %>
-        <form action="/spaces/<%= space.id %>/moreinfo" method="GET">
-          <input class="more_info_button" type='submit' value='More Info'>
-        </form>
-    </li>
-    <% end %>
+      <div id='<%= space.id %>'>
+        <li>
+          <%= space.name %>
+          <%= space.description %>
+          <%= space.price_per_night %>
+            <form action="/spaces/<%= space.id %>/moreinfo" method="GET">
+              <input class="more_info_button" type='submit' value='More Info'>
+            </form>
+        </li>
+        <% end %>
+      </div>
   </ul>
 </body>

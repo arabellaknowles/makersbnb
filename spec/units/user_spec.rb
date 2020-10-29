@@ -4,7 +4,6 @@ describe User do
   describe '.authenticate' do
     let(:user) { User.new(username: 'test101', name: 'Test Person', email: 'test@test.com') }
     before do
-      # User.new(username: 'test101', name: 'Test Person', email: 'test@test.com')
       user.password = 'test12'
       user.save!
     end
