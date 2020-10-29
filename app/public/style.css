@@ -1,33 +1,42 @@
-html,body {
-  height:100%; 
-  width:100%; 
-  margin:200;
+html, body {
+  font-family: Nunito;
 }
 
-body {
-  
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
+::placeholder {
+  color: grey;
 }
 
-.welcome {
-
+.container {
+  display:flex;
+  flex-direction: column;
+  margin-top: 20%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
-  margin: 200;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.sign_in_form {
+.input_field {
+  padding: 20px;
+  width: 140%;
+  font-size: 100%;
+}
 
+.button {
+  border-radius: 12px;
+  padding: 15px 30px;
 }
 
 footer {
   margin: auto;
   text-align: center;
   padding-top: 20px;
-  position: absolute;
+  position: relative;
   bottom: 0;
 }
