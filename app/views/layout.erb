@@ -9,10 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
     
     <div class="banner"> 
-      <img alt="nullspaces" src="https://github.com/kiriarf/makersbnb/blob/styling/app/images/null_spaces.png?raw=true" width="400px" style="display: block;" space="20" />   
-     
+      <a href="/"> <img alt="nullspaces" src="https://github.com/kiriarf/makersbnb/blob/styling/app/images/null_spaces.png?raw=true" width="550px"></a>   
+    </div>
 
-    <div class="banner_button" >
+        <div class="banner_button" >
       <% if current_user %>
         <form action="/sessions/<%= current_user.id %>" method="GET">
           <input class="banner_butt" type="submit" value="My Account">
@@ -38,10 +38,6 @@
         </form>
 
       <% end %>
-
-      
-    </div>
-
     </div>
     <div class="spacer">
     </div>
