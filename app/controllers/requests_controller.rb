@@ -1,20 +1,5 @@
 class BnB < Sinatra::Base
-  
-  # get '/requests/new' do
-  #   if current_user   
-  #     @space = Space.find_by(id: params[:space_id])
-  #     @host = User.find_by(id: params[:host_id])
-  #     @guest = current_user
-  #     erb(:'requests/new')
-  #   else
-  #     flash[:notice] = "Please log in to make a request"
-  #     redirect("/spaces/#{params[:space_id]}/moreinfo")
-  #   end
-    
-  # end
-
   post '/requests' do
-    # space id, host id, user id
     Request.create(
       host_id: params[:host_id], 
       guest_id: params[:guest_id], 
@@ -25,4 +10,10 @@ class BnB < Sinatra::Base
     flash[:notice] = "Request sent! The host has been notified."
     redirect("/spaces/#{params[:space_id]}/moreinfo")
   end
+
+  delete '/requests/:id' do
+    Request.delete(params[:request_id])
+    redirect("/sessions/#{current_user.id}")
+  end
+
 end

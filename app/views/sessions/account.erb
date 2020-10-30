@@ -4,7 +4,9 @@
     <% if @arr1 %>
       <% @arr1.each do |hsh| %>
         <% hsh.each do |space, request| %>
-          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+          <div id="sent_<%= request.id %>">
+            <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+          </div>
         <% end %>
       <% end %>
     <% end %>
@@ -14,7 +16,14 @@
     <% if @arr2 %>
       <% @arr2.each do |hsh| %>
         <% hsh.each do |space, request| %>
-          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+          <div id="received_<%= request.id %>">
+            <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+            <form action="/requests/<%= request.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="request_id" value="<%= request.id %>">
+              <input type="submit" value="Deny">
+            </form>
+          </div>
         <% end %>
       <% end %>
     <% end %>
