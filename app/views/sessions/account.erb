@@ -55,6 +55,7 @@
     </div>
     <div id="received">
       <h1> Received Requests: </h1>
+      <%= flash[:notice] %>
       <% if @arr2 %>
         <% @arr2.each do |hsh| %>
           <% hsh.each do |space, request| %>
@@ -86,7 +87,7 @@
     </div>
   </div>
 
-  <%= flash[:notice] %>
+  
 
   </div>
 </body>

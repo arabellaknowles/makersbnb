@@ -17,6 +17,7 @@ class BnB < Sinatra::Base
       flash[:notice] = "Request Denied for #{params[:space_name]}: from #{params[:start_date]} to #{params[:end_date]}."
       redirect("/sessions/#{current_user.id}")
     elsif params[:choice] == "accept"
+      flash[:notice] = "Request Accepted for #{params[:space_name]}: from #{params[:start_date]} to #{params[:end_date]}."
       Booking.create(guest_id: params[:guest_id], space_id: params[:space_id], start_date: params[:start_date], end_date: params[:end_date])
       redirect("/sessions/#{current_user.id}")
     end
