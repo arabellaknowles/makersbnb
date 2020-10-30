@@ -33,6 +33,10 @@ class BnB < Sinatra::Base
         @arr2 << {Space.find_by(id: request.space_id) => request}
       end
       
+      @spaces = Space.where(host_id: current_user.id).all
+      
+      @bookings = Booking.all
+
       erb(:'/sessions/account')
     end
   end

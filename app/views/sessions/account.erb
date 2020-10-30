@@ -20,16 +20,43 @@
             <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
             <form action="/requests/<%= request.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="choice" value="delete">
               <input type="hidden" name="request_id" value="<%= request.id %>">
               <input type="hidden" name="space_name" value="<%= space.name %>">
               <input type="hidden" name="start_date" value="<%= request.start_date %>">
               <input type="hidden" name="end_date" value="<%= request.end_date %>">
               <input type="submit" value="Deny">
             </form>
+            <form action="/requests/<%= request.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="choice" value="accept">
+              <input type="hidden" name="request_id" value="<%= request.id %>">
+              <input type="hidden" name="guest_id" value="<%= request.guest_id %>">
+              <input type="hidden" name="space_id" value="<%= space.id %>">
+              <input type="hidden" name="start_date" value="<%= request.start_date %>">
+              <input type="hidden" name="end_date" value="<%= request.end_date %>">
+              <input type="submit" value="Accept">
+            </form>
           </div>
         <% end %>
       <% end %>
     <% end %>
   </div>
+  <div id="spaces">
+    <% if @spaces %>
+      <h1> My Spaces: </h1>
+        <% @spaces.each do |space| %>
+          <div id="spaces_<%= space.id %>">
+            <%= space.name %>
+            <% @bookings.each do |booking| %>
+              <% if booking.space_id == space.id %>
+                <p>From: <%= booking.start_date %> to: <%= booking.end_date %>
+              <% end %>
+            <% end%>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+
   <%= flash[:notice] %>
 </body>
