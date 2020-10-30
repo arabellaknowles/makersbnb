@@ -19,4 +19,20 @@ class BnB < Sinatra::Base
       session.delete(:user_id)
       redirect('/')
     end
+
+    get '/sessions/:id' do
+      @arr1 = []
+      @sent_requests = Request.where(guest_id: current_user.id).all
+      @sent_requests.each do |request|
+        @arr1 << {Space.find_by(id: request.space_id) => request}
+      end
+
+      @arr2 = []
+      @received_requests = Request.where(host_id: current_user.id).all
+      @received_requests.each do |request|
+        @arr2 << {Space.find_by(id: request.space_id) => request}
+      end
+      
+      erb(:'/sessions/account')
+    end
   end

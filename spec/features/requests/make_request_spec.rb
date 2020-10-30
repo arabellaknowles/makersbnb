@@ -1,4 +1,4 @@
-feature "requests" do
+feature "making requests" do
   scenario "user can't make request if not logged in" do
     sign_up_host
     add_space
