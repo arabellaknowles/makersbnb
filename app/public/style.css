@@ -8,12 +8,21 @@ html, body {
   height: 100px;
   background-color: white;
   position: fixed;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
 }
 
+.listings {
+  width: 50%; height: 100%; margin: 0 auto; text-align: left;
+}
+
+.space_listing {
+
+}
+
+
 .banner_button {
-  margin-left: 80%;
+  margin-left: 70%;
   max-width: 100%;
   position: fixed;
   display: flex;
@@ -28,6 +37,7 @@ html, body {
 }
 
 .spacer {
+  background-color: white;
   width: 100%;
   height: 95px;
 }
@@ -70,10 +80,25 @@ form {
 
 }
 
-.more_info_butt {
+.small_butt {
   border-radius: 12px;
   padding: 5px 10px 5px 10px;
   margin: 2px 2px 2px 2px;
+}
+
+#requests {
+  height: 60%;
+  width: 60%;
+}
+
+#sent {
+  display:inline;
+  float: right;
+}
+
+#received {
+  display:inline;
+  float: left;
 }
 
 footer {
