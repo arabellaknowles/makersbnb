@@ -15,14 +15,9 @@
     <% @spaces.each do |space| %>
       <div class='space_listing' id='<%= space.id %>'>
         <li style='list-style: none;'>
-          <h2><%= space.name %></h2>
+          <a href="/spaces/<%= space.id %>/moreinfo"><h2><%= space.name %></h2></a>
           <p><%= space.description %></p>
           <p> £<%= space.price_per_night %> per night</p>
-            <div class="info_butt">
-              <form action="/spaces/<%= space.id %>/moreinfo" method="GET">
-                <input class="small_butt" type='submit' value='More Info'>
-              </form>
-            </div>
         </li>
         <% end %>
       </div>
