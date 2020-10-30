@@ -10,10 +10,10 @@
   <% end %>
 
   <%= flash[:notice] %>
-
+  <div class='listings'>
   <ul>
     <% @spaces.each do |space| %>
-      <div id='<%= space.id %>'>
+      <div class='space_listing' id='<%= space.id %>'>
         <li style='list-style: none;'>
           <h2><%= space.name %></h2>
           <p><%= space.description %></p>
@@ -27,5 +27,6 @@
         <% end %>
       </div>
   </ul>
+  </div>
   </div>
 </body>
