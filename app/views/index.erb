@@ -7,10 +7,6 @@
   <div class='container'>
   <% if current_user %>
     <h1><b>Hi, <%= current_user.name %> </b></<h1>
-
-    <form action="/sessions/<%= current_user.id %>" method="GET">
-      <input class="my_account_button" type="submit" value="My Account">
-    </form>
   <% end %>
 
 

@@ -13,26 +13,33 @@
      
 
     <div class="banner_button" >
-      <form action="/sessions" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" class="banner_butt" value="Sign Out">
-      </form>
+      <% if current_user %>
+        <form action="/sessions/<%= current_user.id %>" method="GET">
+          <input class="banner_butt" type="submit" value="My Account">
+        </form>
 
-      <form action="/spaces/new" method="GET">
-        <input type="submit" class="banner_butt" value="Add Space">
-      </form>
+        <form action="/spaces/new" method="GET">
+          <input type="submit" class="banner_butt" value="Add Space">
+        </form>
 
-      <form action="/registrations/new">
-        <input type="submit" class="banner_butt" value="Sign Up">
-      </form>
+        <form action="/sessions" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" class="banner_butt" value="Sign Out">
+        </form>
 
-      <form action="/sign_in">
-        <input type="submit" class="banner_butt"  value="Sign In">
-      </form>
+      <% else %>
 
-      <form action="/sessions/<%= current_user.id %>" method="GET">
-      <input class="banner_butt" type="submit" value="My Account">
-      </form>
+        <form action="/registrations/new">
+          <input type="submit" class="banner_butt" value="Sign Up">
+        </form>
+
+        <form action="/sign_in">
+          <input type="submit" class="banner_butt"  value="Sign In">
+        </form>
+
+      <% end %>
+
+      
     </div>
 
     </div>
