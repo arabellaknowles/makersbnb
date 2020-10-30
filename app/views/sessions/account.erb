@@ -1,31 +1,90 @@
 <body>
   <div class='container'>
-  <div id='user_info'>
-    <h2><%= current_user.name %>'s space requests</h2>
-  </div>
+    <div id='user_info'>
+      <h2><%= current_user.name %>'s account</h2>
+    </div>
+    
+    <div id="bookings">
+      <h1> Bookings: </h1>
+        <% if @bookings %>
+          <% @allspaces.each do |space| %>
+            <div id="guest_bookings">
+              <% @bookings.each do |booking| %>
+                <% if booking.guest_id == current_user.id %>
+                  <% if booking.space_id == space.id %>
+                    <h3><%= space.name %></h3>
+                    <p>From: <%= booking.start_date %> to: <%= booking.end_date %>
+                  <% end %>
+                <% end %>
+              <% end%>
+            </div>
+          <% end %>
+        <% end%>
+    </div>
+ 
   <div id='requests'>
-  <div id="sent">
-    <h1> Sent Requests: </h1>
-    <% if @arr1 %>
-      <% @arr1.each do |hsh| %>
-        <% hsh.each do |space, request| %>
-          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+    <div id="sent">
+      <h1> Sent Requests: </h1>
+      <% if @arr1 %>
+        <% @arr1.each do |hsh| %>
+          <% hsh.each do |space, request| %>
+            <div id="sent_<%= request.id %>">
+              <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </div>
-  <div id="received">
-    <h1> Received Requests: </h1>
-    <% if @arr2 %>
-      <% @arr2.each do |hsh| %>
-        <% hsh.each do |space, request| %>
-          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p><br>
-          <input type='button' class='small_butt' id='accept' value='Accept' style='background-color: white;color: #397034; font-weight: bold;'>
-          <input type='button' class='small_butt' id='deny' value='Deny' style='background-color: white; color: #8c100e; font-weight: bold;'>
+    </div>
+    <div id="received">
+      <h1> Received Requests: </h1>
+      <% if @arr2 %>
+        <% @arr2.each do |hsh| %>
+          <% hsh.each do |space, request| %>
+            <div id="received_<%= request.id %>">
+              <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+              <form action="/requests/<%= request.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="choice" value="delete">
+                <input type="hidden" name="request_id" value="<%= request.id %>">
+                <input type="hidden" name="space_name" value="<%= space.name %>">
+                <input type="hidden" name="start_date" value="<%= request.start_date %>">
+                <input type="hidden" name="end_date" value="<%= request.end_date %>">
+                <input type='submit' class='small_butt' id='deny' value='Deny' style='background-color: white; color: #8c100e; font-weight: bold;'>
+              </form>
+              <form action="/requests/<%= request.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="choice" value="accept">
+                <input type="hidden" name="request_id" value="<%= request.id %>">
+                <input type="hidden" name="guest_id" value="<%= request.guest_id %>">
+                <input type="hidden" name="space_id" value="<%= space.id %>">
+                <input type="hidden" name="start_date" value="<%= request.start_date %>">
+                <input type="hidden" name="end_date" value="<%= request.end_date %>">
+                <input type='submit' class='small_butt' id='accept' value='Accept' style='background-color: white;color: #397034; font-weight: bold;'>
+              </form>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
+    </div>
+  </div>
+
+  <div id="spaces">
+    <% if @spaces %>
+      <h1> My Spaces: </h1>
+        <% @spaces.each do |space| %>
+          <div id="spaces_<%= space.id %>">
+            <h3><%= space.name %></h3>
+            <% @bookings.each do |booking| %>
+              <% if booking.space_id == space.id %>
+                <p>From: <%= booking.start_date %> to: <%= booking.end_date %>
+              <% end %>
+            <% end%>
+          </div>
+        <% end %>
     <% end %>
   </div>
-  </div>
+
+  <%= flash[:notice] %>
+
   </div>
 </body>
