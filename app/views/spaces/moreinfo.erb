@@ -4,6 +4,7 @@
 </head>
 
 <body>
+  <div class='container'>
   <%= @space.name %>
   <%= @space.description %>
   <%= @space.price_per_night %>
@@ -28,6 +29,6 @@
   <% end %>
 
   <%= flash[:notice] %>
+  </div>
 
 </body>
-
