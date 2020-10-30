@@ -16,10 +16,6 @@ html, body {
   margin-left: 80%;
   max-width: 100%;
   position: fixed;
-<<<<<<< HEAD
-  margin-left: 80%;
-=======
->>>>>>> main
   display: flex;
   flex-direction: row;
   justify-self: flex-end;
