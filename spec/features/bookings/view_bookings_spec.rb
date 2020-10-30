@@ -1,5 +1,5 @@
-feature "deleting requests" do
-  scenario "host can deny a request" do
+feature 'view bookings' do
+  scenario 'guest can view bookings on my account page' do
     sign_up_host
     add_space
     click_button('Sign Out')
@@ -15,17 +15,18 @@ feature "deleting requests" do
 
     request = Request.find_by(host_id: 1)
 
-
-    within("div#received") do
-      expect(page).to have_content("12 Ham Street")
-    end
-
     within("div#received_#{request.id}") do
-      click_button('Deny')
+      click_button('Accept')
     end
+    click_button('Sign Out')
+    click_button('Sign In')
+    fill_in 'username', with: 'ADog'
+    fill_in 'password', with: 'ilovedogs'
+    click_on('Submit')
+    click_button('My Account')
 
-    within("div#received") do
-      expect(page).not_to have_content("12 Ham Street")
+    within("div#bookings") do
+      expect(page).to have_content("12 Ham Street")
     end
   end
 end
