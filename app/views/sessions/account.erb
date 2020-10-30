@@ -1,4 +1,8 @@
 <body>
+  <div class='container'>
+  <div id='user_info'>
+    <h2><%= current_user.name %>'s space requests</h2>
+  </div>
   <div id="sent">
     <h1> Sent Requests: </h1>
     <% if @arr1 %>
@@ -14,9 +18,12 @@
     <% if @arr2 %>
       <% @arr2.each do |hsh| %>
         <% hsh.each do |space, request| %>
-          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p>
+          <p><%= space.name %>: from <%= request.start_date %> to <%= request.end_date %></p><br>
+          <input type='button' class='small_butt' id='accept' value='Accept' style='background-color: white;color: #397034; font-weight: bold;'>
+          <input type='button' class='small_butt' id='deny' value='Deny' style='background-color: white; color: #8c100e; font-weight: bold;'>
         <% end %>
       <% end %>
     <% end %>
+  </div>
   </div>
 </body>
