@@ -3,6 +3,7 @@
   <div id='user_info'>
     <h2><%= current_user.name %>'s space requests</h2>
   </div>
+  <div id='requests'>
   <div id="sent">
     <h1> Sent Requests: </h1>
     <% if @arr1 %>
@@ -24,6 +25,7 @@
         <% end %>
       <% end %>
     <% end %>
+  </div>
   </div>
   </div>
 </body>

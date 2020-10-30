@@ -76,6 +76,21 @@ form {
   margin: 2px 2px 2px 2px;
 }
 
+#requests {
+  height: 60%;
+  width: 60%;
+}
+
+#sent {
+  display:inline;
+  float: right;
+}
+
+#received {
+  display:inline;
+  float: left;
+}
+
 footer {
   margin: auto;
   text-align: center;
