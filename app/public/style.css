@@ -16,11 +16,6 @@ html, body {
   width: 50%; height: 100%; margin: 0 auto; text-align: left;
 }
 
-.space_listing {
-
-}
-
-
 .banner_button {
   margin-left: 70%;
   max-width: 100%;
@@ -76,8 +71,8 @@ form {
 }
 
 
-.info_butt {
-
+a {
+  color: inherit;
 }
 
 .small_butt {
@@ -100,6 +95,15 @@ form {
   display:inline;
   float: left;
 }
+
+#bookings-spaces {
+  height: 60%;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 footer {
   margin: auto;

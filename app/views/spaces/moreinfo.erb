@@ -5,24 +5,26 @@
 
 <body>
   <div class='container'>
-  <%= @space.name %>
-  <%= @space.description %>
-  <%= @space.price_per_night %>
-  <%= @space.start_date %>
-  <%= @space.end_date %>
-  <p>Contact <%= @host.name %> at: <%= @host.email %></p>
-
-  <% if current_user %>
-    <form action='/requests' method='POST'>
-      <input type='hidden' name='host_id' value='<%= @host.id %>'>
-      <input type='hidden' name='guest_id' value='<%= @guest.id %>'>
-      <input type='hidden' name='space_id' value='<%= @space.id %>'>
-      <label for='start_date' > Start Date: </label>
-      <input type='date' class='input_field' name='start_date' required><br>
-      <label for='end_date' > End Date: </label>
-      <input type='date' class='input_field' name='end_date' required><br>
-      <input type='submit' class='button' value='Make Request'>
-    </form>
+    <div id='more_info_space'>
+      <h1><%= @space.name %></h1>
+      <h3><%= @space.description %></h3>
+      <h3> £<%= @space.price_per_night %> per night</h3>
+      <h3> Available dates: <%= @space.start_date %> to <%= @space.end_date %> </h3>
+      <h3>Contact <%= @host.name %> at: <%= @host.email %></p>
+    </div>
+    <div id='date_boxes'>
+    <% if current_user %>
+      <form action='/requests' method='POST'>
+        <input type='hidden' name='host_id' value='<%= @host.id %>'>
+        <input type='hidden' name='guest_id' value='<%= @guest.id %>'>
+        <input type='hidden' name='space_id' value='<%= @space.id %>'>
+        <label for='start_date' > Start Date: </label>
+        <input type='date' class='input_field' name='start_date' required><br>
+        <label for='end_date' > End Date: </label>
+        <input type='date' class='input_field' name='end_date' required><br>
+        <input type='submit' class='button' value='Make Request'>
+      </form>
+    <div>
 
   <% else %>
     <p>Please sign in to make a request for this space</p>
