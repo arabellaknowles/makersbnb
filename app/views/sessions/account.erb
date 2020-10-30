@@ -1,4 +1,21 @@
 <body>
+  <div id="bookings">
+    <h1> Bookings: </h1>
+      <% if @bookings %>
+        <% @allspaces.each do |space| %>
+          <div id="guest_bookings">
+            <% @bookings.each do |booking| %>
+              <% if booking.guest_id == current_user.id %>
+                <% if booking.space_id == space.id %>
+                  <h3><%= space.name %></h3>
+                  <p>From: <%= booking.start_date %> to: <%= booking.end_date %>
+                <% end %>
+              <% end %>
+            <% end%>
+          </div>
+        <% end %>
+      <% end%>
+  </div>
   <div id="sent">
     <h1> Sent Requests: </h1>
     <% if @arr1 %>
@@ -47,7 +64,7 @@
       <h1> My Spaces: </h1>
         <% @spaces.each do |space| %>
           <div id="spaces_<%= space.id %>">
-            <%= space.name %>
+            <h3><%= space.name %></h3>
             <% @bookings.each do |booking| %>
               <% if booking.space_id == space.id %>
                 <p>From: <%= booking.start_date %> to: <%= booking.end_date %>

@@ -34,9 +34,14 @@ class BnB < Sinatra::Base
       end
       
       @spaces = Space.where(host_id: current_user.id).all
+
+      @allspaces = Space.all
       
       @bookings = Booking.all
-
+      # @booked_spaces =[]
+      # @bookings.each do |booking|
+      #   if booking.guest_id == current_user.id
+      #     # put into array of hashes space => booking
       erb(:'/sessions/account')
     end
   end
