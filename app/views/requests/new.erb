@@ -1,0 +1,17 @@
+<head>
+  <title> New Request </title>
+  <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+</head>
+
+<body>
+  <form action='/requests' method='POST'>
+    <input type='hidden' name='host_id' value='<%= @host.id %>'>
+    <input type='hidden' name='guest_id' value='<%= @guest.id %>'>
+    <input type='hidden' name='space_id' value='<%= @space.id %>'>
+    <label for='start_date' > Start Date: </label>
+    <input type='date' name='start_date' required><br>
+    <label for='end_date' > End Date: </label>
+    <input type='date' name='end_date' required><br>
+    <input type='submit' value='Make Request'>
+  </form>
+</body>

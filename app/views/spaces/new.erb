@@ -1,14 +1,21 @@
-<p>Complete the form below to register your space!</p>
-<form action='/spaces' method='post'>
-  <label for='name' > Name: </label>
-  <input type='text' name='name' required>
-  <label for='description' > Description: </label>
-  <input type='text' name='description' required>
-  <label for='price_per_night' > Price per night: </label>
-  <input type='text' name='price_per_night' required>
-  <label for='start_date' > First available date: </label>
-  <input type='date' name='start_date' required>
-  <label for='end_date' > Last available date: </label>
-  <input type='date' name='end_date' required>
-  <input type='submit' value='Submit'>
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" body="body "href="<%=url('/style.css')%>" />
+  </head>
+  <body>
+    <div class='container'>
+      <h1>List your space:</h1>
+      <form action='/spaces' method='post'>
+        <input type='text' class='input_field' name='name' placeholder='Property name'required>
+        <input type='text' class='input_field' name='description' placeholder='Description' required>
+        <input type='text' class='input_field' name='price_per_night' placeholder='Price per night' required>
+        <label for='start_date'>First available date:</label>
+        <input type='date' class='input_field' name='start_date' required>
+        <label for='start_date'>Last available date:</label>
+        <input type='date' class='input_field' name='end_date' required>
+        <input type='submit' class='button' value='Submit'>
+      </form>
+    </div>
+  </body>
+</html>
