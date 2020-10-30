@@ -21,6 +21,9 @@
             <form action="/requests/<%= request.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
               <input type="hidden" name="request_id" value="<%= request.id %>">
+              <input type="hidden" name="space_name" value="<%= space.name %>">
+              <input type="hidden" name="start_date" value="<%= request.start_date %>">
+              <input type="hidden" name="end_date" value="<%= request.end_date %>">
               <input type="submit" value="Deny">
             </form>
           </div>

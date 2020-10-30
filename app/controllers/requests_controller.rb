@@ -13,7 +13,8 @@ class BnB < Sinatra::Base
 
   delete '/requests/:id' do
     Request.delete(params[:request_id])
-    flash[:notice] = "Request Denied"
+    #pass a parameter: Space name, start date and end date
+    flash[:notice] = "Request Denied for #{params[:space_name]}: from #{params[:start_date]} to #{params[:end_date]}."
     redirect("/sessions/#{current_user.id}")
   end
 
