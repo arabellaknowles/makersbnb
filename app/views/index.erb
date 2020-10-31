@@ -15,7 +15,7 @@
     <% @spaces.each do |space| %>
       <div class='space_listing' id='<%= space.id %>'>
         <li style='list-style: none;'>
-          <a href="/spaces/<%= space.id %>/moreinfo"><h2><%= space.name %></h2></a>
+          <a id='more_info' href="/spaces/<%= space.id %>/moreinfo"><h2><%= space.name %></h2></a>
           <p><%= space.description %></p>
           <p> £<%= space.price_per_night %> per night</p>
         </li>

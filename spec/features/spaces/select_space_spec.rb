@@ -5,7 +5,7 @@ feature 'Viewing more detailed information about selected space' do
     add_space
     click_on('Sign Out')
     sign_up_guest
-    click_button('More Info')
+    click_link('more_info')
   end
 
   scenario 'User clicks listed space on homepage and redirected to info page' do
