@@ -28,7 +28,7 @@ end
 
 def make_request
   sign_up_guest
-  click_button('More Info')
+  click_link('more_info')
   fill_in 'start_date', with: '01/02/2021'
   fill_in 'end_date', with: '18/03/2021'
   click_on('Make Request')

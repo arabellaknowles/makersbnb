@@ -8,7 +8,7 @@ feature "making requests" do
     first_space = spaces[0]
     
     within("div##{first_space.id}") do
-      click_button("More Info")
+      click_link('more_info')
     end
 
     expect(page).not_to have_button('Make Request')
@@ -25,7 +25,7 @@ feature "making requests" do
     first_space = spaces[0]
     
     within("div##{first_space.id}") do
-      click_button("More Info")
+      click_link('more_info')
     end
     
     fill_in 'start_date', with: '12/03/2021'
